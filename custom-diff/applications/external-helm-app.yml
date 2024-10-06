@@ -6,6 +6,12 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
+  ignoreDifferences:
+    - group: ''
+      kind: Secret
+      jsonPointers:
+        - /data
+        - /stringData
   project: default
 
   source:
